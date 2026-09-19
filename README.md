@@ -1,70 +1,45 @@
 # Ajeet Dubey — DevOps Portfolio
 
-Static portfolio for **Ajeet Dubey**, Senior DevOps Engineer.
+Animated static portfolio for GitHub Pages.
 
-## Positioning
+## Files
 
-AWS · Azure · Kubernetes / Amazon EKS · Terraform · Docker · CI/CD · Linux · Cloud Security · Observability
-
-## Structure
-
-```text
-.
-├── index.html
-├── styles.css
-├── script.js
-└── README.md
-```
+- `index.html` — page structure and content
+- `styles.css` — responsive UI, animations and visual effects
+- `script.js` — particles, scroll reveal, navigation, terminal clock and project modals
+- `assets/profile.jpeg` — supplied profile image
 
 ## Run locally
 
-No build system is required.
+From this directory:
 
 ```bash
 python -m http.server 8080
 ```
 
-Open:
+Open `http://localhost:8080`.
 
-```text
-http://localhost:8080
-```
+## Deploy to GitHub Pages
 
-## Deploy with GitHub Pages
+Repository:
 
-1. Create a repository named `ajeet-dubey89.github.io`.
-2. Upload `index.html`, `styles.css`, `script.js`, and `README.md`.
-3. Go to **Settings → Pages**.
-4. Select **Deploy from a branch**.
-5. Select the `main` branch and `/root`.
-6. Save.
-7. Your portfolio will be available at:
+`ajeet-dubey89.github.io`
 
-```text
-https://ajeet-dubey89.github.io
-```
+Push the files to the `main` branch and configure:
 
-## Content policy for projects
+- Settings → Pages
+- Source → Deploy from a branch
+- Branch → `main`
+- Folder → `/ (root)`
 
-The current project cards are intentionally marked **PLANNED**. Change them only after the corresponding repositories actually exist.
+## Replace the profile image
 
-Do not publish:
+Keep the filename:
 
-- AWS access keys
-- private keys
-- passwords
-- production secrets
-- customer data
-- internal company configuration
+`assets/profile.jpeg`
 
-## Next implementation
+or update the `<img>` path in `index.html`.
 
-Replace each planned project with a real repository and connect the project cards to the repository URLs.
+## Notes
 
-Recommended repositories:
-
-- `eks-terraform-platform`
-- `terraform-aws-infrastructure`
-- `github-actions-cicd`
-- `kubernetes-troubleshooting-lab`
-- `cloud-security-lab`
+The project cards are intentionally marked `PLANNED` until the corresponding public repositories exist. Update those labels and add repository links as real projects are completed.

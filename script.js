@@ -1,90 +1,110 @@
-const modal = document.getElementById("project-modal");
-const modalContent = document.getElementById("modal-content");
-const closeBtn = document.querySelector(".modal-close");
-
 const projectData = {
   eks: {
     title: "AWS EKS Platform",
-    body: "A production-inspired platform project. The public repository should contain the infrastructure code, architecture, deployment documentation and safe operational examples.",
-    code: `Terraform
-  ├─ VPC / networking
-  ├─ EKS cluster
-  ├─ IAM / access
-  └─ supporting services
-
-Kubernetes
-  ├─ namespaces
-  ├─ workloads
-  ├─ services / ingress
-  └─ observability
-
-Evidence
-  ├─ architecture
-  ├─ validation
-  └─ cleanup`
+    text: "A Terraform-first Kubernetes platform blueprint focused on repeatable networking, EKS, IAM, ECR, workload deployment and operational visibility.",
+    items: [["Infrastructure","Terraform + AWS VPC"],["Platform","Amazon EKS"],["Delivery","Container + Kubernetes deployment"],["Security","IAM + least-privilege patterns"]]
   },
   terraform: {
     title: "Terraform AWS Infrastructure",
-    body: "Reusable infrastructure examples designed around clear module boundaries, environment inputs, security controls and lifecycle documentation.",
-    code: `terraform/
-  ├─ modules/
-  │  ├─ network/
-  │  ├─ compute/
-  │  └─ security/
-  ├─ environments/
-  └─ README.md`
+    text: "Reusable infrastructure examples covering common AWS building blocks and environment separation.",
+    items: [["Network","VPC, subnets, routing"],["Compute","EC2 and supporting resources"],["Storage","S3 patterns"],["Data","RDS examples"]]
   },
   cicd: {
     title: "CI/CD Engineering Lab",
-    body: "A source-to-deployment workflow demonstrating validation, build, containerization, registry publishing and deployment concepts.",
-    code: `git push
-   ↓
-validate → test → build
-   ↓
-docker build
-   ↓
-ECR
-   ↓
-Kubernetes / EKS
-   ↓
-observe → validate`
-  },
-  k8s: {
-    title: "Kubernetes Troubleshooting Lab",
-    body: "A reproducible incident library. Each scenario should explain the symptom, commands used to collect evidence, root cause, resolution and prevention.",
-    code: `failure
-  ↓
-kubectl get / describe / logs
-  ↓
-events + resources
-  ↓
-dependency isolation
-  ↓
-root cause
-  ↓
-fix + validation`
+    text: "A practical delivery lab showing source-to-deployment automation using GitHub Actions, Docker, ECR and AWS delivery services.",
+    items: [["Source","GitHub"],["Build","Docker + CI"],["Registry","Amazon ECR"],["Deploy","Automated delivery"]]
   },
   security: {
     title: "Cloud Security Lab",
-    body: "Safe demonstrations of IAM, encryption, perimeter controls, detection and vulnerability-management workflows without real credentials or customer data.",
-    code: `identity → IAM
-secrets  → Secrets Manager
-crypto   → KMS
-edge     → WAF
-detect   → GuardDuty
-posture  → Security Hub
-vuln     → Inspector`
+    text: "A practical cloud-security learning lab covering identity, encryption, edge controls and AWS security services.",
+    items: [["Identity","IAM"],["Encryption","KMS + secrets"],["Edge","WAF"],["Detection","GuardDuty + Security Hub + Inspector"]]
   }
 };
 
-document.querySelectorAll("[data-modal]").forEach(button => {
-  button.addEventListener("click", () => {
-    const p = projectData[button.dataset.modal];
-    modalContent.innerHTML = `<div class="eyebrow">ENGINEERING BLUEPRINT</div><h2>${p.title}</h2><p>${p.body}</p><pre class="modal-code">${p.code}</pre><p><strong>Public status:</strong> planned until the repository is actually implemented and published.</p>`;
+const $ = (s) => document.querySelector(s);
+const $$ = (s) => document.querySelectorAll(s);
+
+$("#year").textContent = new Date().getFullYear();
+
+function updateClock(){
+  const d = new Date();
+  $("#terminalTime").textContent = d.toLocaleTimeString([], {hour:"2-digit",minute:"2-digit",second:"2-digit"});
+}
+updateClock();
+setInterval(updateClock, 1000);
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting) entry.target.classList.add("visible");
+  });
+},{threshold:.12});
+$$(".reveal").forEach(el => observer.observe(el));
+
+const nav = $("#nav");
+$("#menuBtn").addEventListener("click", () => nav.classList.toggle("open"));
+$$(".nav a").forEach(a => a.addEventListener("click", () => nav.classList.remove("open")));
+
+const modal = $("#projectModal");
+const modalTitle = $("#modalTitle");
+const modalText = $("#modalText");
+const modalGrid = $("#modalGrid");
+
+$$(".project-card").forEach(card => {
+  card.querySelector(".blueprint").addEventListener("click", () => {
+    const data = projectData[card.dataset.project];
+    modalTitle.textContent = data.title;
+    modalText.textContent = data.text;
+    modalGrid.innerHTML = data.items.map(item => `<div><strong>${item[0]}</strong><span>${item[1]}</span></div>`).join("");
     modal.showModal();
   });
 });
+$("#modalClose").addEventListener("click", () => modal.close());
+modal.addEventListener("click", e => { if(e.target === modal) modal.close(); });
 
-closeBtn.addEventListener("click", () => modal.close());
-modal.addEventListener("click", e => { if (e.target === modal) modal.close(); });
-document.getElementById("year").textContent = new Date().getFullYear();
+const sections = [...$$("main section[id]")];
+const navLinks = [...$$(".nav a")];
+const navObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      navLinks.forEach(a => a.classList.toggle("active", a.getAttribute("href") === "#" + entry.target.id));
+    }
+  });
+},{rootMargin:"-35% 0px -55% 0px"});
+sections.forEach(s => navObserver.observe(s));
+
+const canvas = $("#particles");
+const ctx = canvas.getContext("2d");
+let particles = [];
+function resizeCanvas(){
+  canvas.width = innerWidth * devicePixelRatio;
+  canvas.height = innerHeight * devicePixelRatio;
+  ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+  particles = Array.from({length: Math.min(85, Math.floor(innerWidth/15))}, () => ({
+    x: Math.random()*innerWidth,
+    y: Math.random()*innerHeight,
+    r: Math.random()*1.5+.3,
+    vx:(Math.random()-.5)*.18,
+    vy:(Math.random()-.5)*.18,
+    a:Math.random()*.55+.1
+  }));
+}
+function draw(){
+  ctx.clearRect(0,0,innerWidth,innerHeight);
+  particles.forEach(p=>{
+    p.x += p.vx; p.y += p.vy;
+    if(p.x<0)p.x=innerWidth;if(p.x>innerWidth)p.x=0;
+    if(p.y<0)p.y=innerHeight;if(p.y>innerHeight)p.y=0;
+    ctx.beginPath();ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(70,210,255,${p.a})`;ctx.fill();
+  });
+  requestAnimationFrame(draw);
+}
+resizeCanvas(); addEventListener("resize",resizeCanvas); draw();
+
+let light = false;
+$("#themeToggle").addEventListener("click",()=>{
+  light=!light;
+  document.documentElement.style.setProperty("--bg", light ? "#07121d" : "#040811");
+  document.documentElement.style.setProperty("--panel", light ? "#0c1a27" : "#07101d");
+  $("#themeToggle").textContent = light ? "☀" : "◐";
+});

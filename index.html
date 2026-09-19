@@ -3,251 +3,246 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Ajeet Dubey — Senior DevOps Engineer focused on AWS, Azure, Kubernetes, Terraform, CI/CD, cloud security and observability.">
+  <meta name="theme-color" content="#050912">
+  <meta name="description" content="Ajeet Dubey — Senior DevOps Engineer portfolio. AWS, Azure, Kubernetes, Terraform, CI/CD, Cloud Security and Automation.">
   <title>Ajeet Dubey | Senior DevOps Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="noise"></div>
+  <div class="grid-bg"></div>
+  <div class="orb orb-a"></div>
+  <div class="orb orb-b"></div>
+  <canvas id="particles" aria-hidden="true"></canvas>
+
   <header class="site-header">
-    <a class="brand" href="#top" aria-label="Ajeet Dubey home">
+    <a class="brand" href="#home" aria-label="Ajeet Dubey home">
       <span class="brand-mark">AD</span>
-      <span>ajeet<span class="muted">.dev</span></span>
+      <span class="brand-copy">
+        <strong>ajeet<span>.dev</span></strong>
+        <small>BUILD · AUTOMATE · SECURE · SCALE</small>
+      </span>
     </a>
-    <nav aria-label="Primary navigation">
+
+    <nav class="nav" id="nav">
+      <a class="active" href="#home">Home</a>
       <a href="#about">About</a>
       <a href="#stack">Stack</a>
       <a href="#projects">Projects</a>
       <a href="#architecture">Architecture</a>
       <a href="#contact">Contact</a>
     </nav>
-    <a class="nav-cta" href="https://github.com/ajeet-dubey89" target="_blank" rel="noreferrer">GitHub ↗</a>
+
+    <div class="header-actions">
+      <a class="social-btn github" href="https://github.com/ajeet-dubey89" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="social-btn linkedin" href="https://www.linkedin.com/in/ajeet-dubey89/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <button class="theme-btn" id="themeToggle" aria-label="Toggle visual mode">◐</button>
+      <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
+    </div>
   </header>
 
-  <main id="top">
-    <section class="hero shell">
-      <div class="hero-copy">
-        <div class="eyebrow"><span class="status-dot"></span> SENIOR DEVOPS ENGINEER</div>
-        <h1>Cloud infrastructure.<br><span>Engineered for change.</span></h1>
-        <p class="hero-lead">
-          I design, automate, secure and operate cloud infrastructure and containerized platforms across
-          <strong>AWS</strong> and <strong>Azure</strong>, with a focus on Kubernetes, Terraform, CI/CD,
-          observability and production troubleshooting.
-        </p>
-        <div class="hero-actions">
-          <a class="btn primary" href="#projects">Explore engineering work</a>
-          <a class="btn secondary" href="https://www.linkedin.com/in/ajeet-dubey89/" target="_blank" rel="noreferrer">LinkedIn ↗</a>
+  <main>
+    <section class="hero section" id="home">
+      <div class="hero-left reveal">
+        <div class="profile-wrap">
+          <div class="profile-ring ring-one"></div>
+          <div class="profile-ring ring-two"></div>
+          <img class="profile-photo" src="assets/profile.jpeg" alt="Ajeet Dubey">
+          <span class="profile-dot" aria-hidden="true"></span>
         </div>
-        <div class="terminal-mini">
-          <div><span class="prompt">$</span> whoami</div>
-          <div class="terminal-output">senior-devops-engineer --cloud aws,azure --platform kubernetes</div>
-          <div><span class="prompt">$</span> mission</div>
-          <div class="terminal-output">build → automate → secure → observe → troubleshoot → improve</div>
+
+        <div class="eyebrow">Hi, I'm</div>
+        <h1>Ajeet <span>Dubey</span><i>|</i></h1>
+        <h2>Senior DevOps Engineer</h2>
+        <p class="hero-copy">Designing, automating, and running reliable cloud infrastructure with a focus on Kubernetes, IaC, CI/CD, security, and operational excellence.</p>
+
+        <div class="tech-line">
+          <span>AWS</span><b>·</b><span>Azure</span><b>·</b><span>Kubernetes</span><b>·</b><span>Terraform</span><b>·</b><span>CI/CD</span><b>·</b><span>Cloud Security</span>
+        </div>
+
+        <div class="status-pill"><span></span> Open to Opportunities</div>
+
+        <div class="hero-cta">
+          <a class="btn primary" href="#contact">Let's Connect <span>→</span></a>
+          <a class="btn ghost" href="#projects">View My Work <span>↓</span></a>
+        </div>
+
+        <div class="quick-links">
+          <a href="https://github.com/ajeet-dubey89" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+          <a href="https://www.linkedin.com/in/ajeet-dubey89/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+          <a href="mailto:contact@ajeet.dev" aria-label="Email">@</a>
+          <a href="#about" aria-label="Profile">CV</a>
+          <blockquote>“Infrastructure is not just code;<br> it’s the foundation of possibilities.”</blockquote>
         </div>
       </div>
 
-      <div class="hero-console" aria-label="Infrastructure console">
-        <div class="window-bar"><span></span><span></span><span></span><b>infra-console</b></div>
-        <div class="console-body">
-          <div class="console-line"><i>01</i><span class="key">cloud</span><b>AWS / Azure</b></div>
-          <div class="console-line"><i>02</i><span class="key">platform</span><b>Kubernetes / EKS</b></div>
-          <div class="console-line"><i>03</i><span class="key">iac</span><b>Terraform</b></div>
-          <div class="console-line"><i>04</i><span class="key">delivery</span><b>Jenkins / GitHub Actions</b></div>
-          <div class="console-line"><i>05</i><span class="key">security</span><b>IAM / KMS / WAF</b></div>
-          <div class="console-line"><i>06</i><span class="key">observe</span><b>CloudWatch / Site24x7</b></div>
-          <div class="console-line"><i>07</i><span class="key">status</span><b class="green">operational mindset</b></div>
-          <div class="graph" aria-hidden="true">
-            <span style="height:24%"></span><span style="height:44%"></span><span style="height:31%"></span>
-            <span style="height:68%"></span><span style="height:52%"></span><span style="height:83%"></span>
-            <span style="height:61%"></span><span style="height:92%"></span><span style="height:73%"></span>
-            <span style="height:96%"></span><span style="height:78%"></span><span style="height:88%"></span>
+      <div class="hero-right reveal delay-1">
+        <div class="terminal-card">
+          <div class="terminal-top">
+            <span class="traffic red"></span><span class="traffic yellow"></span><span class="traffic green"></span>
+            <span class="terminal-title">ajeet@devops:~</span>
+            <span class="terminal-time" id="terminalTime"></span>
+          </div>
+          <div class="terminal-body" id="terminalBody">
+            <div><em>$ whoami</em></div>
+            <div>Ajeet Dubey</div>
+            <div><em>$ role</em></div>
+            <div>Senior DevOps Engineer</div>
+            <div><em>$ cloud</em></div>
+            <div>AWS | Azure</div>
+            <div><em>$ platform</em></div>
+            <div>Kubernetes | EKS | Terraform</div>
+            <div><em>$ delivery</em></div>
+            <div>GitHub Actions | Jenkins | CodePipeline</div>
+            <div><em>$ security</em></div>
+            <div>IAM | KMS | WAF | GuardDuty</div>
+            <div><em>$ status</em></div>
+            <div class="terminal-green">Always learning...</div>
+            <div class="cursor-line"><span>$</span><i></i></div>
           </div>
         </div>
-      </div>
-    </section>
 
-    <section class="ticker" aria-label="Technology focus">
-      <div class="ticker-track">
-        AWS · AZURE · KUBERNETES · EKS · TERRAFORM · DOCKER · JENKINS · GITHUB ACTIONS · LINUX · SECURITY · OBSERVABILITY · AWS · AZURE · KUBERNETES · EKS · TERRAFORM
-      </div>
-    </section>
-
-    <section id="about" class="section shell">
-      <div class="section-head">
-        <div><span class="section-number">01</span><span class="eyebrow">ENGINEERING IDENTITY</span></div>
-        <span class="terminal-label">$ cat /etc/engineer</span>
-      </div>
-      <div class="about-grid">
-        <div>
-          <h2>Turning operational problems into repeatable engineering.</h2>
-          <p>
-            My focus is the layer between application delivery and reliable infrastructure:
-            provisioning, deployment, Kubernetes operations, cloud security, monitoring and systematic troubleshooting.
-          </p>
-          <p>
-            I prefer infrastructure that is <strong>repeatable, observable, secure, documented, automatable,
-            recoverable and easy to troubleshoot.</strong>
-          </p>
+        <div class="globe">
+          <div class="globe-grid"></div>
+          <div class="globe-label">BUILD<br>AUTOMATE<br><span>SECURE</span><br>SCALE</div>
         </div>
-        <div class="principles">
-          <div><span>01</span><b>Infrastructure as Code</b><small>Versioned and repeatable infrastructure.</small></div>
-          <div><span>02</span><b>Automation</b><small>Reduce repetitive operational work.</small></div>
-          <div><span>03</span><b>Security</b><small>Build controls into the platform.</small></div>
-          <div><span>04</span><b>Observability</b><small>Make failures diagnosable.</small></div>
+
+        <div class="infra-stack" aria-label="Technology stack">
+          <div class="stack-cube aws">AWS</div>
+          <div class="stack-cube azure">A</div>
+          <div class="stack-cube k8s">K8s</div>
+          <div class="stack-cube tf">TF</div>
+          <div class="stack-cube docker">D</div>
+          <div class="stack-cube linux">L</div>
         </div>
       </div>
     </section>
 
-    <section id="stack" class="section shell">
-      <div class="section-head">
-        <div><span class="section-number">02</span><span class="eyebrow">ENGINEERING STACK</span></div>
-        <span class="terminal-label">$ ./stack --verbose</span>
-      </div>
-      <div class="stack-grid">
-        <article class="stack-card featured"><div class="card-icon">☁</div><h3>Cloud</h3><p>AWS · Azure</p><div class="tags">EC2 · EKS · S3 · RDS · Aurora · DynamoDB · ECR · ALB · NLB · CloudFront · Route 53 · WAF · VPC · Application Gateway · VMSS · Azure SQL</div></article>
-        <article class="stack-card"><div class="card-icon">◈</div><h3>Platform</h3><p>Kubernetes · Containers</p><div class="tags">Kubernetes · Amazon EKS · Docker · Deployments · Services · Ingress · ConfigMaps · Secrets · Resource tuning</div></article>
-        <article class="stack-card"><div class="card-icon">⌘</div><h3>IaC & Delivery</h3><p>Automation</p><div class="tags">Terraform · Jenkins · GitHub Actions · CodePipeline · CodeBuild · ECR · AWS CLI · Bash · Python</div></article>
-        <article class="stack-card"><div class="card-icon">◇</div><h3>Security</h3><p>Cloud security</p><div class="tags">IAM · KMS · Secrets Manager · WAF · Security Groups · NSG · GuardDuty · Security Hub · Inspector</div></article>
-        <article class="stack-card"><div class="card-icon">⌁</div><h3>Observability</h3><p>Operations</p><div class="tags">CloudWatch · Site24x7 · Logs · Metrics · Alerts · Resource analysis · Response-time investigation</div></article>
-        <article class="stack-card"><div class="card-icon">#</div><h3>Systems</h3><p>Linux engineering</p><div class="tags">Linux · Ubuntu · SSH · systemd · cron · networking · filesystems · process analysis · troubleshooting</div></article>
-      </div>
+    <section class="value-strip section reveal" id="about">
+      <article><span>⌁</span><div><strong>Infrastructure Focused</strong><small>Cloud platforms & reliability</small></div></article>
+      <article><span>⚙</span><div><strong>Automation Driven</strong><small>IaC, CI/CD & repeatability</small></div></article>
+      <article><span>♢</span><div><strong>Security Minded</strong><small>Identity, secrets & controls</small></div></article>
+      <article><span>▥</span><div><strong>Operational Excellence</strong><small>Troubleshooting & observability</small></div></article>
     </section>
 
-    <section id="projects" class="section shell">
-      <div class="section-head">
-        <div><span class="section-number">03</span><span class="eyebrow">PROOF OF WORK</span></div>
-        <span class="terminal-label">$ ls -la ./projects</span>
+    <section class="section projects-section" id="projects">
+      <div class="section-heading reveal">
+        <div><span class="section-number">03</span><span class="section-kicker">FEATURED PROJECTS</span></div>
+        <span class="command">$ ls -la ./projects</span>
       </div>
-      <p class="section-intro">The portfolio is built around technical evidence. Planned projects are clearly marked until the implementation is public.</p>
+      <div class="section-intro reveal">
+        <div><h2>Proof of <span>Work</span></h2><p>Technical projects designed to demonstrate cloud infrastructure, automation, security, Kubernetes, and delivery practices.</p></div>
+        <span class="project-counter">04 PROJECT BLUEPRINTS</span>
+      </div>
+
       <div class="project-grid">
-        <article class="project-card">
-          <div class="project-top"><span class="project-id">01</span><span class="state">PLANNED</span></div>
-          <h3>AWS EKS Platform</h3><p>Terraform-driven Kubernetes platform covering EKS, networking, workload deployment, IAM and observability.</p>
-          <div class="tags">Terraform · AWS · EKS · Kubernetes · ECR · ALB</div>
-          <button class="details-btn" data-modal="eks">View engineering blueprint →</button>
+        <article class="project-card reveal" data-project="eks">
+          <div class="card-top"><span>01</span><b>PLANNED</b></div>
+          <div class="project-icon k8s-icon">K8s</div>
+          <h3>AWS EKS Platform</h3>
+          <p>Terraform-driven Kubernetes platform covering EKS, networking, workload deployment, IAM and observability.</p>
+          <div class="tags"><span>Terraform</span><span>AWS</span><span>EKS</span><span>Kubernetes</span></div>
+          <button class="blueprint">View engineering blueprint →</button>
         </article>
-        <article class="project-card">
-          <div class="project-top"><span class="project-id">02</span><span class="state">PLANNED</span></div>
-          <h3>Terraform AWS Infrastructure</h3><p>Reusable AWS infrastructure examples for networking, compute, storage, security and data services.</p>
-          <div class="tags">Terraform · VPC · EC2 · IAM · S3 · RDS</div>
-          <button class="details-btn" data-modal="terraform">View engineering blueprint →</button>
+
+        <article class="project-card reveal delay-1" data-project="terraform">
+          <div class="card-top"><span>02</span><b>PLANNED</b></div>
+          <div class="project-icon tf-icon">TF</div>
+          <h3>Terraform AWS Infrastructure</h3>
+          <p>Reusable infrastructure examples for networking, compute, storage, security and data services.</p>
+          <div class="tags"><span>Terraform</span><span>VPC</span><span>EC2</span><span>S3</span><span>RDS</span></div>
+          <button class="blueprint">View engineering blueprint →</button>
         </article>
-        <article class="project-card">
-          <div class="project-top"><span class="project-id">03</span><span class="state">PLANNED</span></div>
-          <h3>CI/CD Engineering Lab</h3><p>Source-to-container delivery flow with validation, Docker builds, registry publishing and Kubernetes deployment.</p>
-          <div class="tags">GitHub Actions · Docker · ECR · Kubernetes</div>
-          <button class="details-btn" data-modal="cicd">View engineering blueprint →</button>
+
+        <article class="project-card reveal delay-2" data-project="cicd">
+          <div class="card-top"><span>03</span><b>PLANNED</b></div>
+          <div class="project-icon gh-icon">GH</div>
+          <h3>CI/CD Engineering Lab</h3>
+          <p>End-to-end delivery pipelines using GitHub Actions, CodePipeline and containerized deployments.</p>
+          <div class="tags"><span>GitHub Actions</span><span>Docker</span><span>ECR</span><span>CI/CD</span></div>
+          <button class="blueprint">View engineering blueprint →</button>
         </article>
-        <article class="project-card">
-          <div class="project-top"><span class="project-id">04</span><span class="state">PLANNED</span></div>
-          <h3>Kubernetes Troubleshooting Lab</h3><p>Reproducible failure scenarios documented from symptom through evidence, root cause, resolution and prevention.</p>
-          <div class="tags">Kubernetes · kubectl · Linux · Troubleshooting</div>
-          <button class="details-btn" data-modal="k8s">View engineering blueprint →</button>
-        </article>
-        <article class="project-card">
-          <div class="project-top"><span class="project-id">05</span><span class="state">PLANNED</span></div>
-          <h3>Cloud Security Lab</h3><p>Safe, non-production demonstrations of identity, encryption, perimeter security and cloud detection controls.</p>
-          <div class="tags">IAM · KMS · WAF · GuardDuty · Security Hub</div>
-          <button class="details-btn" data-modal="security">View engineering blueprint →</button>
+
+        <article class="project-card reveal delay-3" data-project="security">
+          <div class="card-top"><span>04</span><b>PLANNED</b></div>
+          <div class="project-icon sec-icon">SEC</div>
+          <h3>Cloud Security Lab</h3>
+          <p>Practical security implementations using IAM, KMS, WAF, GuardDuty, Security Hub and Inspector.</p>
+          <div class="tags"><span>Security</span><span>IAM</span><span>KMS</span><span>GuardDuty</span></div>
+          <button class="blueprint">View engineering blueprint →</button>
         </article>
       </div>
     </section>
 
-    <section id="architecture" class="section shell">
-      <div class="section-head">
-        <div><span class="section-number">04</span><span class="eyebrow">REFERENCE ARCHITECTURE</span></div>
-        <span class="terminal-label">$ graph --delivery-path</span>
+    <section class="section architecture-section" id="architecture">
+      <div class="section-heading reveal">
+        <div><span class="section-number">04</span><span class="section-kicker">REFERENCE ARCHITECTURE</span></div>
+        <span class="command">$ cat architecture.md</span>
       </div>
-      <div class="architecture-panel">
-        <div class="arch-row">
-          <div class="arch-node">DEVELOPER</div><span>→</span><div class="arch-node">GITHUB</div><span>→</span><div class="arch-node">CI / CD</div><span>→</span><div class="arch-node">DOCKER</div>
+      <div class="architecture-card reveal">
+        <div class="arch-copy">
+          <span class="mini-label">PLATFORM FLOW</span>
+          <h2>Cloud infrastructure built as an <span>engineering system.</span></h2>
+          <p>From infrastructure as code to Kubernetes workloads, delivery pipelines, security controls and observability — every layer has an explicit responsibility.</p>
         </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-row">
-          <div class="arch-node">AMAZON ECR</div><span>→</span><div class="arch-node highlight">KUBERNETES / EKS</div><span>→</span><div class="arch-node">APPLICATION</div>
-        </div>
-        <div class="arch-arrow">↓</div>
-        <div class="arch-row">
-          <div class="arch-node">LOGS</div><span>+</span><div class="arch-node">METRICS</div><span>+</span><div class="arch-node">ALERTS</div><span>→</span><div class="arch-node highlight">OBSERVE / IMPROVE</div>
-        </div>
-      </div>
-      <div class="troubleshoot">
-        <div class="troubleshoot-title"><span class="pulse"></span> INCIDENT RESPONSE MODEL</div>
-        <div class="steps">
-          <span>Symptom</span><i>→</i><span>Evidence</span><i>→</i><span>Isolate</span><i>→</i><span>Root Cause</span><i>→</i><span>Fix</span><i>→</i><span>Validate</span><i>→</i><span>Prevent</span>
+        <div class="arch-flow">
+          <div>GIT<br><small>source</small></div><i>→</i>
+          <div>CI/CD<br><small>delivery</small></div><i>→</i>
+          <div>TF<br><small>infrastructure</small></div><i>→</i>
+          <div>EKS<br><small>platform</small></div><i>→</i>
+          <div>OBS<br><small>operate</small></div>
         </div>
       </div>
     </section>
 
-    <section class="section shell case-study">
-      <div class="section-head">
-        <div><span class="section-number">05</span><span class="eyebrow">HOW I TROUBLESHOOT</span></div>
-        <span class="terminal-label">$ kubectl describe production</span>
-      </div>
-      <div class="case-grid">
-        <div class="case-code">
-<pre><span class="muted">$ kubectl get pods -A</span>
-<span class="cyan">$ kubectl describe pod &lt;pod&gt;</span>
-<span class="cyan">$ kubectl logs &lt;pod&gt; --previous</span>
-<span class="cyan">$ kubectl get events -A</span>
-<span class="cyan">$ kubectl top pods</span>
-
-<span class="muted">$ df -h</span>
-<span class="cyan">$ free -m</span>
-<span class="cyan">$ ss -tulpn</span>
-<span class="cyan">$ journalctl -xe</span>
-
-<span class="green">✓ collect evidence
-✓ isolate dependency
-✓ validate fix</span></pre>
+    <section class="section method-section">
+      <div class="method-grid">
+        <div class="method-copy reveal">
+          <span class="mini-label">TROUBLESHOOTING MINDSET</span>
+          <h2>Turn operational challenges into <span>engineering solutions.</span></h2>
+          <p>Observe first. Isolate the failing layer. Validate with evidence. Apply the smallest safe change. Automate the lesson.</p>
         </div>
+        <div class="method-terminal reveal delay-1">
+          <div><span>01</span> Observe signals</div>
+          <div><span>02</span> Identify the failing layer</div>
+          <div><span>03</span> Reproduce / validate</div>
+          <div><span>04</span> Remediate safely</div>
+          <div><span>05</span> Document & automate</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="contact-card reveal">
         <div>
-          <h2>Evidence before assumptions.</h2>
-          <p>Production troubleshooting is treated as an engineering process: collect evidence, isolate the failure domain, understand dependencies, apply a controlled fix, validate the result and document prevention.</p>
-          <div class="mini-list">
-            <span>CrashLoopBackOff</span><span>OOMKilled</span><span>ContainerStatusUnknown</span><span>Secrets</span><span>Ingress</span><span>Resource pressure</span><span>Disk</span><span>Network</span>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="section shell roadmap">
-      <div class="section-head">
-        <div><span class="section-number">06</span><span class="eyebrow">BUILD ROADMAP</span></div>
-        <span class="terminal-label">$ git log --oneline</span>
-      </div>
-      <div class="timeline">
-        <div><b>01</b><div><strong>Foundation</strong><p>Profile, README, portfolio shell and repository standards.</p></div></div>
-        <div><b>02</b><div><strong>Platform</strong><p>Publish the EKS + Terraform project with architecture and reproducible setup.</p></div></div>
-        <div><b>03</b><div><strong>Delivery</strong><p>Add CI/CD workflows and deployment evidence.</p></div></div>
-        <div><b>04</b><div><strong>Operations</strong><p>Publish troubleshooting labs, monitoring and security examples.</p></div></div>
-      </div>
-    </section>
-
-    <section id="contact" class="section shell contact">
-      <div class="contact-card">
-        <div>
-          <span class="eyebrow">LET'S CONNECT</span>
-          <h2>Build reliable systems.<br>Automate the boring parts.</h2>
-          <p>For DevOps, Cloud Infrastructure, Kubernetes and Platform Engineering opportunities.</p>
+          <span class="mini-label">05 · CONNECT</span>
+          <h2>Let's build something <span>reliable.</span></h2>
+          <p>For DevOps, cloud infrastructure, Kubernetes, automation, or platform engineering opportunities.</p>
         </div>
         <div class="contact-actions">
-          <a class="btn primary" href="https://www.linkedin.com/in/ajeet-dubey89/" target="_blank" rel="noreferrer">Connect on LinkedIn ↗</a>
-          <a class="btn secondary" href="https://github.com/ajeet-dubey89" target="_blank" rel="noreferrer">View GitHub ↗</a>
+          <a class="btn primary" href="https://github.com/ajeet-dubey89" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="btn ghost" href="https://www.linkedin.com/in/ajeet-dubey89/" target="_blank" rel="noopener">LinkedIn ↗</a>
         </div>
       </div>
     </section>
   </main>
 
-  <footer class="site-footer shell">
-    <span>© <span id="year"></span> Ajeet Dubey</span>
-    <span class="terminal-label">build → automate → secure → observe → improve</span>
+  <footer>
+    <span>Made with &lt;/&gt; by Ajeet Dubey</span>
+    <span>© <span id="year"></span> · Cloud · DevOps · Automation</span>
   </footer>
 
-  <dialog id="project-modal">
-    <button class="modal-close" aria-label="Close">×</button>
-    <div id="modal-content"></div>
+  <dialog id="projectModal">
+    <button class="modal-close" id="modalClose" aria-label="Close">×</button>
+    <span class="mini-label" id="modalLabel">ENGINEERING BLUEPRINT</span>
+    <h2 id="modalTitle"></h2>
+    <p id="modalText"></p>
+    <div class="modal-grid" id="modalGrid"></div>
   </dialog>
+
   <script src="script.js"></script>
 </body>
 </html>
