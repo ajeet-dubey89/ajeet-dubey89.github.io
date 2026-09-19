@@ -108,3 +108,13 @@ $("#themeToggle").addEventListener("click",()=>{
   document.documentElement.style.setProperty("--panel", light ? "#0c1a27" : "#07101d");
   $("#themeToggle").textContent = light ? "☀" : "◐";
 });
+
+// Logo fallback: keep the dashboard readable if an external icon CDN is unavailable.
+document.querySelectorAll("img[src*='cdn.simpleicons.org']").forEach(img => {
+  img.addEventListener("error", () => {
+    const fallback = document.createElement("span");
+    fallback.className = "logo-fallback";
+    fallback.textContent = img.alt || "•";
+    img.replaceWith(fallback);
+  }, {once:true});
+});

@@ -10,6 +10,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <!-- v5: all technology/social icons are bundled locally; no external icon CDN required. -->
 </head>
 <body>
   <div class="noise"></div>
@@ -37,8 +38,8 @@
     </nav>
 
     <div class="header-actions">
-      <a class="social-btn github" href="https://github.com/ajeet-dubey89" target="_blank" rel="noopener">GitHub ↗</a>
-      <a class="social-btn linkedin" href="https://www.linkedin.com/in/ajeet-dubey89/" target="_blank" rel="noopener">LinkedIn ↗</a>
+      <a class="social-btn github" href="https://github.com/ajeet-dubey89" target="_blank" rel="noopener"><img src="assets/icons/github.svg" alt="" loading="eager"> GitHub ↗</a>
+      <a class="social-btn linkedin" href="https://www.linkedin.com/in/ajeet-dubey89/" target="_blank" rel="noopener"><img src="assets/icons/linkedin.svg" alt="" loading="eager"> LinkedIn ↗</a>
       <button class="theme-btn" id="themeToggle" aria-label="Toggle visual mode">◐</button>
       <button class="menu-btn" id="menuBtn" aria-label="Open menu">☰</button>
     </div>
@@ -47,7 +48,8 @@
   <main>
     <section class="hero section" id="home">
       <div class="hero-left reveal">
-        <div class="profile-wrap">
+        <div class="profile-wrap" aria-label="Ajeet Dubey profile photo">
+
           <div class="profile-ring ring-one"></div>
           <div class="profile-ring ring-two"></div>
           <img class="profile-photo" src="assets/profile.jpeg" alt="Ajeet Dubey">
@@ -71,10 +73,14 @@
         </div>
 
         <div class="quick-links">
-          <a href="https://github.com/ajeet-dubey89" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
-          <a href="https://www.linkedin.com/in/ajeet-dubey89/" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
-          <a href="mailto:contact@ajeet.dev" aria-label="Email">@</a>
-          <a href="#about" aria-label="Profile">CV</a>
+          <a href="https://github.com/ajeet-dubey89" target="_blank" rel="noopener" aria-label="GitHub">
+            <img src="assets/icons/github.svg" alt="" loading="eager">
+          </a>
+          <a href="https://www.linkedin.com/in/ajeet-dubey89/" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <img src="assets/icons/linkedin.svg" alt="" loading="eager">
+          </a>
+          <a href="mailto:contact@ajeet.dev" aria-label="Email" class="mail-icon">@</a>
+          <a href="#about" aria-label="Profile" class="doc-icon">CV</a>
           <blockquote>“Infrastructure is not just code;<br> it’s the foundation of possibilities.”</blockquote>
         </div>
       </div>
@@ -111,21 +117,33 @@
         </div>
 
         <div class="infra-stack" aria-label="Technology stack">
-          <div class="stack-cube aws">AWS</div>
-          <div class="stack-cube azure">A</div>
-          <div class="stack-cube k8s">K8s</div>
-          <div class="stack-cube tf">TF</div>
-          <div class="stack-cube docker">D</div>
-          <div class="stack-cube linux">L</div>
+          <div class="stack-cube aws" title="Amazon Web Services">
+            <img src="assets/icons/amazonaws.svg" alt="AWS" loading="eager"><span>AWS</span>
+          </div>
+          <div class="stack-cube azure" title="Microsoft Azure">
+            <img src="assets/icons/microsoftazure.svg" alt="Azure" loading="eager"><span>AZURE</span>
+          </div>
+          <div class="stack-cube k8s" title="Kubernetes">
+            <img src="assets/icons/kubernetes.svg" alt="Kubernetes" loading="eager"><span>K8S</span>
+          </div>
+          <div class="stack-cube tf" title="Terraform">
+            <img src="assets/icons/terraform.svg" alt="Terraform" loading="eager"><span>TF</span>
+          </div>
+          <div class="stack-cube docker" title="Docker">
+            <img src="assets/icons/docker.svg" alt="Docker" loading="eager"><span>DOCKER</span>
+          </div>
+          <div class="stack-cube linux" title="Linux">
+            <img src="assets/icons/linux.svg" alt="Linux" loading="eager"><span>LINUX</span>
+          </div>
         </div>
       </div>
     </section>
 
     <section class="value-strip section reveal" id="about">
-      <article><span>⌁</span><div><strong>Infrastructure Focused</strong><small>Cloud platforms & reliability</small></div></article>
-      <article><span>⚙</span><div><strong>Automation Driven</strong><small>IaC, CI/CD & repeatability</small></div></article>
-      <article><span>♢</span><div><strong>Security Minded</strong><small>Identity, secrets & controls</small></div></article>
-      <article><span>▥</span><div><strong>Operational Excellence</strong><small>Troubleshooting & observability</small></div></article>
+      <article><span class="value-icon cloud-icon">☁</span><div><strong>Infrastructure Focused</strong><small>Cloud platforms & reliability</small></div></article>
+      <article><span class="value-icon">⚙</span><div><strong>Automation Driven</strong><small>IaC, CI/CD & repeatability</small></div></article>
+      <article><span class="value-icon shield-icon">◇</span><div><strong>Security Minded</strong><small>Identity, secrets & controls</small></div></article>
+      <article><span class="value-icon bars-icon">▥</span><div><strong>Operational Excellence</strong><small>Troubleshooting & observability</small></div></article>
     </section>
 
     <section class="section projects-section" id="projects">
@@ -141,7 +159,7 @@
       <div class="project-grid">
         <article class="project-card reveal" data-project="eks">
           <div class="card-top"><span>01</span><b>PLANNED</b></div>
-          <div class="project-icon k8s-icon">K8s</div>
+          <div class="project-icon k8s-icon"><img src="assets/icons/kubernetes.svg" alt="Kubernetes" loading="eager"></div>
           <h3>AWS EKS Platform</h3>
           <p>Terraform-driven Kubernetes platform covering EKS, networking, workload deployment, IAM and observability.</p>
           <div class="tags"><span>Terraform</span><span>AWS</span><span>EKS</span><span>Kubernetes</span></div>
@@ -150,7 +168,7 @@
 
         <article class="project-card reveal delay-1" data-project="terraform">
           <div class="card-top"><span>02</span><b>PLANNED</b></div>
-          <div class="project-icon tf-icon">TF</div>
+          <div class="project-icon tf-icon"><img src="assets/icons/terraform.svg" alt="Terraform" loading="eager"></div>
           <h3>Terraform AWS Infrastructure</h3>
           <p>Reusable infrastructure examples for networking, compute, storage, security and data services.</p>
           <div class="tags"><span>Terraform</span><span>VPC</span><span>EC2</span><span>S3</span><span>RDS</span></div>
@@ -159,7 +177,7 @@
 
         <article class="project-card reveal delay-2" data-project="cicd">
           <div class="card-top"><span>03</span><b>PLANNED</b></div>
-          <div class="project-icon gh-icon">GH</div>
+          <div class="project-icon gh-icon"><img src="assets/icons/github.svg" alt="GitHub" loading="eager"></div>
           <h3>CI/CD Engineering Lab</h3>
           <p>End-to-end delivery pipelines using GitHub Actions, CodePipeline and containerized deployments.</p>
           <div class="tags"><span>GitHub Actions</span><span>Docker</span><span>ECR</span><span>CI/CD</span></div>
@@ -168,7 +186,7 @@
 
         <article class="project-card reveal delay-3" data-project="security">
           <div class="card-top"><span>04</span><b>PLANNED</b></div>
-          <div class="project-icon sec-icon">SEC</div>
+          <div class="project-icon sec-icon">✓</div>
           <h3>Cloud Security Lab</h3>
           <p>Practical security implementations using IAM, KMS, WAF, GuardDuty, Security Hub and Inspector.</p>
           <div class="tags"><span>Security</span><span>IAM</span><span>KMS</span><span>GuardDuty</span></div>
@@ -223,8 +241,8 @@
           <p>For DevOps, cloud infrastructure, Kubernetes, automation, or platform engineering opportunities.</p>
         </div>
         <div class="contact-actions">
-          <a class="btn primary" href="https://github.com/ajeet-dubey89" target="_blank" rel="noopener">GitHub ↗</a>
-          <a class="btn ghost" href="https://www.linkedin.com/in/ajeet-dubey89/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="btn primary icon-btn" href="https://github.com/ajeet-dubey89" target="_blank" rel="noopener"><img src="assets/icons/github.svg" alt=""> GitHub ↗</a>
+          <a class="btn ghost icon-btn" href="https://www.linkedin.com/in/ajeet-dubey89/" target="_blank" rel="noopener"><img src="assets/icons/linkedin.svg" alt=""> LinkedIn ↗</a>
         </div>
       </div>
     </section>

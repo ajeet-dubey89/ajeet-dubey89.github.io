@@ -43,3 +43,18 @@ or update the `<img>` path in `index.html`.
 ## Notes
 
 The project cards are intentionally marked `PLANNED` until the corresponding public repositories exist. Update those labels and add repository links as real projects are completed.
+
+
+## v3 layout update
+
+The hero was tightened to keep the supplied profile photograph in a controlled circular frame and preserve the dashboard/terminal composition on desktop. The page remains responsive and the portrait scales down further at tablet/mobile widths.
+
+
+## V4 dashboard update
+
+The hero dashboard now uses logo-backed AWS, Azure, Kubernetes, Terraform, Docker and Linux tiles plus GitHub and LinkedIn icons. Icons use Simple Icons through a CDN with a JavaScript text fallback, while the supplied profile image remains local at `assets/profile.jpeg`.
+
+
+## v5 — bundled icons
+
+Technology and social icons are bundled under `assets/icons/`, so the portfolio no longer depends on the Simple Icons CDN for the dashboard, GitHub, LinkedIn, Docker, or Linux marks. This makes the local preview and GitHub Pages deployment more deterministic.
